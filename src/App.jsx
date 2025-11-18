@@ -1,7 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// il fatto di aver aggiunto bootstrap come DIPENDENZA del progetto
+// non significa che sia stato AUTOMATICAMENTE inserito tra i fogli di stile
+// della pagina!
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+
+// questa riga fa in modo che il foglio css di bootstrap venga aggiunto a App
+// e di conseguenza a tutti i componenti React
 
 // un COMPONENTE REACT può anche essere semplicemente una FUNZIONE
 // che RITORNA del J S X
@@ -12,34 +17,16 @@ import './App.css'
 // JSX permette una facile interpolazione di variabili tramite {  }
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <label htmlFor="brand">Marca</label>
-        <input id="brand" />
-      </div>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Container>
+        <Row className="justify-content-center">
+          <div className="col col-12 col-md-8 col-lg-4">
+            <img src="https://placebear.com/300/300" className="w-100" />
+            <h1 className="text-center">CIAONE</h1>
+          </div>
+        </Row>
+      </Container>
     </>
   )
 }
